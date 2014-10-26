@@ -119,7 +119,26 @@ var site = require('apostrophe-site')({
     scripts: ['site'],
     stylesheets: ['site']
   },
-
+  sanitizeHtml: {
+    allowedTags: [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul',
+  'ol', 'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br',
+  'div', 'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre' ],
+    allowedAttributes: {
+      a: [ 'href', 'name', 'target' ],
+      h1: [ 'class' ],
+      h2: [ 'class' ],
+      h3: [ 'class' ],
+      // We don't currently allow img itself by default, but this
+      // would make sense if we did
+      img: [ 'src' ],
+      p: ['class']
+    },
+    allowedClasses: {
+      'h1': ['ui x-large pink header'],
+      'h2': ['ui large pink header'],
+      'p': ['ui small gray sub header', 'ui small header']
+    }
+  }
   // beforeEndAssets: function(callback) {
   //   // Apostrophe already loads these for logged-out users, but we
   //   // want them all the time in this project.

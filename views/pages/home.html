@@ -15,7 +15,11 @@
         {% if demo %}
           <h4><em>This demo resets at the top of the hour.</em></h4>
         {% endif %} #}
-        {{ aposArea(page, 'hero', { textOnly: true, controls: [ 'style', 'bold', 'italic'], styles: [ { value: 'div', label: 'Normal' }, { value: 'h3', label: 'Heading 3' }, { value: 'h4', label: 'Heading 4' } ] }) }}
+        {{ aposArea(page, 'hero', { textOnly: true, controls: [ 'style', 'bold', 'italic'], styles: [     { value:'div', label: 'Normal' },
+    { value: 'h1', label: 'Gigantic', attributes: { class: 'ui x-large pink header' } },
+    { value: 'h2', label: 'Title', attributes: { class: 'ui large pink header' } },
+    { value: 'p',  label: 'Subtitle', attributes: { class: 'ui small gray sub header' } },
+    { value: 'p',  label: 'Block Heading', attributes: { class: 'ui small header' } } ] }) }}
       </div>
     </div>
   </div>
